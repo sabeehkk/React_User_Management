@@ -26,7 +26,6 @@ const Login = async (req,res)=>{
         const {email,password}=req.body;
         console.log(req.body,'dataaaaaa');
         const userData =await userModel.findOne({email})
-        // console.log(userData);
         if(!userData){
             return res.json({message:'user is not found'})
         }
@@ -56,7 +55,6 @@ const EditProfile = async (req, res)=>{
     console.log('profile edittttttttttttt');
     try {
         console.log(req.body,'dataaaaaaaaaaaaaaa');
-        // console.log(req.file,'backend imageee');
         const {username, email, phoneNumber, id} = req.body;
         let image = req.file ? req.file.filename : req.body.image;
         console.log('imageeeeeeeeeeeeeeeeeeeeeeeeeee',req);
