@@ -26,7 +26,7 @@ const  userRegister= async(req,res)=>{
 const Login = async (req,res)=>{
     try{
         const {email,password}=req.body;
-        console.log(req.body,'dataaaaaaaaaaaaaaaaaaaaaaa');
+        console.log(req.body,'dataaaaaa');
         const userData =await userModel.findOne({email})
         // console.log(userData);
         if(!userData){

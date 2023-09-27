@@ -9,7 +9,7 @@ const AdminNavBar = () => {
     <nav className="bg-blue-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/admin" className="text-xl font-semibold">
-          Admin Dashboard
+          Admin Pannel
         </Link>
         <ul className="flex space-x-4">
           <li>

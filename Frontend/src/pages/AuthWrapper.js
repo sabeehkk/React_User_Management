@@ -18,7 +18,8 @@ import EditUser from '../components/adminUserManagement/Edituser';
 import useAdminIsLogin from "../customHook/adminisLogin";
 import useIsLogout from "../customHook/userisLogout";
 import AdminUserPage from '../components/adminUserManagement/AdminUserPage';
-
+import Adduser from '../components/adminUserManagement/Adduser';
+import Viewuserdetails from '../components/adminUserManagement/ViewUserDetails';
 
 
 export default function AuthWrapper() {
@@ -48,6 +49,8 @@ export default function AuthWrapper() {
       <Route path='/admin/dashboard' element={<AdminDashboard />}/>
       <Route path='/admin/Logout' element={<AdminLogout />}/>
       <Route path='/admin/users' element={<AdminUserPage/>}/>
+      <Route path='/admin/adduser' element={<Adduser/>} />
+      <Route path='/edituser/:id' element={<Viewuserdetails/>}/>
     </Routes>
     </div>
   )

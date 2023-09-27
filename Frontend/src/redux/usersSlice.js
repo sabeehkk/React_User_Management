@@ -56,12 +56,23 @@ const userSlice = createSlice({
             })
             state.users = state.FilterData = updates;
         },
+        // FilterUsers: (state, action) => {
+        //     const filterData = state.users.filter((user) => {
+        //         return user?.email && user.email.match(action.payload);
+        //     })
+        //     state.FilterData = filterData;
+        // },
         FilterUsers: (state, action) => {
+            const filterTextLowercase = action.payload.toLowerCase(); // Convert filter text to lowercase
+            
             const filterData = state.users.filter((user) => {
-                return user?.username.toLowerCase().match(action.payload.toLowerCase());
-            })
+                const userEmailAddressLowercase = user?.email?.toLowerCase(); // Convert email to lowercase if it exists
+                return userEmailAddressLowercase && userEmailAddressLowercase.includes(filterTextLowercase);
+            });
+            
             state.FilterData = filterData;
         },
+        
         DeleteUser: (state, action) => {
             const updates = state.users.filter((user) => {
                 return user._id !== action.payload;
