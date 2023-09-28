@@ -6,7 +6,6 @@ import {
     EditProfile,
     Login,
     userRegister,
-    
 } from "../controller/user.js";
 
 const router = express.Router();
@@ -18,7 +17,6 @@ router.post('/register',userRegister)
 router.post('/login',Login)
 router.post('/UserProfileEdit',upload.single('image'), EditProfile)
 
-
 // router.post("/uploadImage", (req, res) => {
 //     console.log('uploadimga',req.body.image);
 //     // res.send('haiiiiiiiiii')
@@ -28,6 +26,5 @@ router.post('/UserProfileEdit',upload.single('image'), EditProfile)
 //         console.log(error);
 //       });
 //   });
-
 
 export default router;

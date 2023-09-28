@@ -1,5 +1,4 @@
 import express from "express";
-// ,userData,DeleteUser,Dashboard
 import {
     Dashboard,
     adminLogin,
@@ -11,7 +10,6 @@ import {
 import VerifyToken from "../middleware/AdminVerifyToken.js";
 
 const router = express.Router();
-
 
 router.post('/adminlogin',adminLogin)
 router.post('/',Dashboard)
