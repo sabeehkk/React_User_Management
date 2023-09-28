@@ -3,14 +3,11 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import userModel from '../model/userModel.js';
 
-
 const adminLogin=async (req,res)=>{
     try{
-        console.log('admin kittyyyyyyyyyyyyy');
         const {email,password}=req.body;
         console.log(req.body);
         const adminData =await adminModel.findOne({email})
-        console.log(adminData);
         if(!adminData){
             return res.json({message:'invalid email or password '})
         }
@@ -26,14 +23,11 @@ const adminLogin=async (req,res)=>{
     }
 }
 const UserData=async (req,res)=>{
-    console.log('userdataaaaaaaaa');
     try {
         console.log(req.headers);
         const userData=await userModel.find({})
         const userCount = await userModel.countDocuments({});
         const blockedUserCount=await userModel.countDocuments({status:false})
-
-        console.log('userdataaaaaaaaaaaaaaaaaaaa',userData);
         res.json({userData,userCount,blockedUserCount})
     } catch (error){
         console.log(error.message);
@@ -49,10 +43,8 @@ const UserData=async (req,res)=>{
 }
 
 const Action =async(req,res)=>{
-    console.log('admin actionnnnn');
         const id = req.query.id;
         const status = req.query.status;
-     
         console.log(id, status);
         await userModel.updateOne({_id: id}, {$set: {status: status}})
         .then((result)=>{
@@ -63,6 +55,7 @@ const Action =async(req,res)=>{
             console.log(error);
         })
     }
+
     const DeleteUser = async (req, res)=>{
         console.log('admin delete user');
         try {
@@ -80,7 +73,6 @@ const Action =async(req,res)=>{
             console.log(error);
         }
     }
-
 export {
         adminLogin,
         UserData,
