@@ -22,6 +22,7 @@ const adminLogin=async (req,res)=>{
         console.log(error,'admin login error');
     }
 }
+
 const UserData=async (req,res)=>{
     try {
         console.log(req.headers);
@@ -34,7 +35,6 @@ const UserData=async (req,res)=>{
      }
   }
   const Dashboard = async (req, res)=>{
-    console.log('admin dashboarddddddd');
     const blockedUserCount = await userModel.countDocuments({status: false})
     const userCount = await userModel.countDocuments({});
     if (userCount || blockedUserCount){
@@ -57,7 +57,6 @@ const Action =async(req,res)=>{
     }
 
     const DeleteUser = async (req, res)=>{
-        console.log('admin delete user');
         try {
             const id = req.body.id;
             console.log(id);

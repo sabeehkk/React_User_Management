@@ -1,4 +1,6 @@
 import express from "express";
+
+
 import {
     Dashboard,
     adminLogin,
@@ -16,6 +18,5 @@ router.post('/',Dashboard)
 router.get('/users', UserData);
 router.get('/action',Action)
 router.post('/deleteuser',DeleteUser);
-
 
 export default router;

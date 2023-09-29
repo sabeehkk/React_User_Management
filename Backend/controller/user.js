@@ -52,12 +52,9 @@ const Login = async (req,res)=>{
 }
 
 const EditProfile = async (req, res)=>{
-    console.log('profile edittttttttttttt');
     try {
-        console.log(req.body,'dataaaaaaaaaaaaaaa');
         const {username, email, phoneNumber, id} = req.body;
         let image = req.file ? req.file.filename : req.body.image;
-        console.log('imageeeeeeeeeeeeeeeeeeeeeeeeeee',req);
         await userModel.updateOne({_id: id}, {$set:{name:username, email, phoneNumber, image:image}})
         .then((result)=>{ 
             console.log(result);
