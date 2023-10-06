@@ -47,7 +47,6 @@ const Action =async(req,res)=>{
         console.log(id, status);
         await userModel.updateOne({_id: id}, {$set: {status: status}})
         .then((result)=>{
-            console.log(result);
             res.json({message:'success'});
         })
         .catch((error)=>{
