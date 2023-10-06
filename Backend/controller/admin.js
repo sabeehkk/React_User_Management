@@ -6,7 +6,6 @@ import userModel from '../model/userModel.js';
 const adminLogin=async (req,res)=>{
     try{
         const {email,password}=req.body;
-        console.log(req.body);
         const adminData =await adminModel.findOne({email})
         if(!adminData){
             return res.json({message:'invalid email or password '})
@@ -59,14 +58,10 @@ const Action =async(req,res)=>{
     const DeleteUser = async (req, res)=>{
         try {
             const id = req.body.id;
-            console.log(id);
             const result = await userModel.deleteOne({_id:id});
             if (result.deletedCount === 1){
-                console.log(result);
                 return res.json({message:'User deleted successfully'});
             }
-            console.log(result);
-    
             return res.json({message: 'An error occurred'});
         } catch (error) {
             console.log(error);
