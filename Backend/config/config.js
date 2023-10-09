@@ -10,6 +10,7 @@ function dbConnect() {
       console.log(err , "db");
     });
 }
+ 
 
 export default dbConnect;
 
