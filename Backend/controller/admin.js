@@ -44,7 +44,6 @@ const UserData=async (req,res)=>{
 const Action =async(req,res)=>{
         const id = req.query.id;
         const status = req.query.status;
-        console.log(id, status);
         await userModel.updateOne({_id: id}, {$set: {status: status}})
         .then((result)=>{
             res.json({message:'success'});
