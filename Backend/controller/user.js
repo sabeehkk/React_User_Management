@@ -10,7 +10,6 @@ const  userRegister= async(req,res)=>{
             return res.json({message:'User Already exists'})
       }
       const hashedPassword = await bcrypt.hash(password,10)
-
       const user=new userModel({name,email,phoneNumber,password:hashedPassword})
       res.json({message:'success'})
 
