@@ -18,7 +18,6 @@ const  userRegister= async(req,res)=>{
         console.log(error.message);
     }
 }
-
 const Login = async (req,res)=>{
     try{
         const {email,password}=req.body;
@@ -47,7 +46,6 @@ const Login = async (req,res)=>{
         console.log(error.message);
     }
 }
-
 const EditProfile = async (req, res)=>{
     try {
         const {username, email, phoneNumber, id} = req.body;
