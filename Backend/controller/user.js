@@ -63,7 +63,6 @@ const EditProfile = async (req, res)=>{
     }
 }
 
-
 export {  
     userRegister,
     Login,
