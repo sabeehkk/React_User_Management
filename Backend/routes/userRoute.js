@@ -25,5 +25,4 @@ router.post('/UserProfileEdit',upload.single('image'), EditProfile)
 //       });
 //   });
 
-
 export default router;
