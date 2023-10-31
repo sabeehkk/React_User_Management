@@ -1,7 +1,6 @@
 import express from "express";
 import VerifyToken from "../middleware/UserVerifyToken.js";
 import upload from '../middleware/multer.js'
-
 import {
     EditProfile,
     Login,
