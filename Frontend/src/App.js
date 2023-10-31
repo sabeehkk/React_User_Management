@@ -13,7 +13,7 @@ export default function App(){
    <BrowserRouter>
    <Provider store={store}>
     <AuthWrapper/>
-   </Provider>
+   </Provider>  
    </BrowserRouter>
   )
 }

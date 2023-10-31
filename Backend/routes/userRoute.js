@@ -16,7 +16,6 @@ router.get('/test',VerifyToken,(req, res)=>{
 router.post('/register',userRegister)
 router.post('/login',Login)
 router.post('/UserProfileEdit',upload.single('image'), EditProfile)
-
 // router.post("/uploadImage", (req, res) => {
 //     console.log('uploadimga',req.body.image);
 //     // res.send('haiiiiiiiiii')
