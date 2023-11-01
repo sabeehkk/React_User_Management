@@ -7,7 +7,6 @@ import store from './redux/store';
 
 axios.defaults.baseURL = "http://localhost:5000/";
 axios.defaults.withCredentials = true;
-
 export default function App(){
   return (
    <BrowserRouter>
