@@ -1,11 +1,10 @@
-import axios from 'axios';
+ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { setUsersData, DeleteUser, FilterUsers, ChangeAccess } from '../../redux/usersSlice';
 import { Link } from "react-router-dom";
 import useAdminIsLogin from '../../customHook/adminisLogin';
 const AdminUsersPage = () => {
-  // const [searchQuery, setSearchQuery] = useState('');
   const { users , FilterData} = useSelector((state) => state.users);
   const [searchQuery, setSearchQuery] = useState('');
 
